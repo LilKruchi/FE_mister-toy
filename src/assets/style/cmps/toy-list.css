@@ -1,0 +1,37 @@
+.index-cmps-container {
+    display: flex;
+}
+
+.filter-container {
+    margin-top: 15px;
+    min-width: 250px;
+}
+
+.toys-display {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.toy {
+    background-color: aqua;
+    margin: 15px 5px;
+    min-width: 20em;
+    max-width: 20em;
+    min-height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.button-container {
+    justify-content: center;
+    align-self: center;
+}
+
+.button-container button {
+    background-color: gray;
+}

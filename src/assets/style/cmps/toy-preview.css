@@ -1,0 +1,15 @@
+.toy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toy-img-container {
+    width: 11rem;
+    margin: 15px 0;
+}
+
+.toy-img-container img {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+}
