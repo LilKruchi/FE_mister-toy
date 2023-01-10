@@ -5,7 +5,6 @@ import Select from 'react-select'
 
 import { toyService } from "../services/toy.service.js";
 import { saveToys } from "../store/actions/toy.action.js";
-import { LabelCheckbox } from "./label-checkbox.jsx";
 import { LoadingSpinner } from "./loading-spinner.jsx";
 
 export function ToyEdit() {
@@ -32,9 +31,12 @@ export function ToyEdit() {
 
     function handleChange({ target }, value) {
         if (target) {
-
             let { value, type, name: field } = target
             value = (type === 'number') ? +value : value
+
+            if (type === 'checkbox') {
+                setToy(prevToy => ({ ...prevToy, inStock: target.checked }))
+            }
 
             setToy(prevToy => ({ ...prevToy, [field]: value }))
         } else {
@@ -48,7 +50,6 @@ export function ToyEdit() {
 
         // newBug(bugToEdit)
     }
-    console.log(toy);
 
     function onSaveToy(ev) {
         ev.preventDefault()
@@ -61,45 +62,66 @@ export function ToyEdit() {
 
     if (!toy) return <LoadingSpinner />
     return (
-        <form onSubmit={onSaveToy}>
-            <label htmlFor="name">Toy name:</label>
-            <input type="text"
-                name="name"
-                id="name"
-                placeholder={typeof todoId === 'string' ? 'Edit Toys namr...' : 'Enter new Toys name...'}
-                value={toy.name}
-                required
-                onChange={handleChange} />
+        <form className="edit-container" onSubmit={onSaveToy}>
+            <div className="input-container">
+                <h2 className="edit-title">{toyId ? `Currently editing: ${toy.name}` : 'Create a new toy listing'}</h2>
+                <label htmlFor="name">Toy name:
+                    <input type="text"
+                        name="name"
+                        id="name"
+                        placeholder={typeof todoId === 'string' ? 'Edit Toys namr...' : 'Enter new Toys name...'}
+                        value={toy.name}
+                        required
+                        onChange={handleChange} />
+                </label>
 
-            <label htmlFor="price">Toy price:</label>
-            <input type="number"
-                name="price"
-                id="price"
-                placeholder={typeof todoId === 'string' ? 'Edit Toys text...' : 'Enter new Toy...'}
-                value={toy.price}
-                required
-                onChange={handleChange} />
+                <label htmlFor="price">Toy price:
+                    <input type="number"
+                        name="price"
+                        id="price"
+                        placeholder={typeof todoId === 'string' ? 'Edit Toys text...' : 'Enter new Toy...'}
+                        value={toy.price}
+                        required
+                        onKeyDown={(ev) => {
+                            if (!/[0-9]/.test(ev.key)) {
+                                ev.preventDefault();
+                            }
+                        }}
+                        onChange={handleChange} />
+                </label>
 
-            <label htmlFor="img">Toy img:</label>
-            <input type="file"
-                name="img"
-                id="img" />
-            <div className="checkbox-container">
-                <h3>Toy labels:</h3>
-                {/* {toyLabels.map(label =>
-                    <LabelCheckbox toy={toy} label={label} handleChange={handleChange} />
-                )} */}
-                <Select options={options}
-                    isMulti
-                    name="labels"
-                    onChange={handleChange}
-                    value={toy.labels ? toy.labels.map(label => ({ value: label, label })) : []}
-                />
+                <label htmlFor="img">Toy img:
+                    <input type="file"
+                        name="img"
+                        id="img" />
+                </label>
+
+                <label htmlFor="checkbox">
+                    <input type="checkbox"
+                        name="inStock"
+                        // value={toy.inStock}
+                        onChange={handleChange}
+                        id="checkbox" />
+                    Do you have stock of the toy?
+                </label>
+
+                <div className="checkbox-container">
+
+                    <label htmlFor="multi-select"> Toy labels:
+                        <Select options={options}
+                            isMulti
+
+                            id="multi-select"
+                            name="labels"
+                            onChange={handleChange}
+                            value={toy.labels ? toy.labels.map(label => ({ value: label, label })) : []}
+                        />
+                    </label>
+                </div>
+
+
+                <button className="form-submit">SAVE</button>
             </div>
-
-
-            <button>save</button>
-
         </form>
     )
 }

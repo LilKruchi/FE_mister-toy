@@ -1,6 +1,6 @@
-button {
+/* button {
     cursor: pointer;
-    background-color: var(--clr2bg);
+    background-color: var(--clr4);
     margin: 0.5em;
     border: 0;
     padding: 0.5em 0.8em;
@@ -21,4 +21,4 @@ button[disabled] {
 input:focus {
     background-color: var(--clr1bg);
     transition: background-color 1s;
-}
+} */

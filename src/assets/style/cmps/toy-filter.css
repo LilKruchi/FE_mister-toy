@@ -1,0 +1,65 @@
+.toy-filter {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.filter-container {
+    border-right: 1px solid var(--clr7);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input#name,
+input#price {
+    height: 40px;
+    border: 1px solid var(--clr8);
+    border-radius: 3px;
+    font-size: 1rem;
+    margin: 20px 5px;
+}
+
+input::placeholder {
+    font-family: rubik;
+}
+
+.form-container label {
+    display: inline-block;
+}
+
+.multi-select {
+    font-family: rubik;
+    margin: 5px 15px 0 0;
+    margin-top: 15px;
+}
+
+#stock {
+    margin-left: 0;
+}
+
+.filter-title {
+    margin-top: 60px;
+}
+
+.index-cmps-container .filter-container .add-container {
+    margin-top: 1px;
+    padding: 9px;
+    margin-left: -1.6rem;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--clr7);
+}
+
+.add-toy {
+    position: block;
+    margin-top: 10px;
+    margin-left: 1.06rem;
+}
+
+.add-toy div {
+    display: inline-block;
+    position: relative;
+    right: 23%;
+}

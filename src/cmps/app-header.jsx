@@ -5,11 +5,13 @@ export function AppHeader() {
         <header className="app-header">
             <div className="header-container">
                 <Link to="/">
-                    <h2>ICON</h2>
+                    <h2>Mister Toy</h2>
                 </Link>
 
                 <nav>
                     <NavLink to="/toy">Toys</NavLink>
+                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/statistic">Statistics</NavLink>
                 </nav>
 
             </div>
