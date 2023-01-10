@@ -14,7 +14,8 @@ export const toyService = {
     remove,
     save,
     getEmptyToy,
-    getDefaultFilter
+    getDefaultFilter,
+    getPercentOfStock
 }
 // { name: '', inStock: true, labels: [] }
 function query(filterBy = getDefaultFilter()) {
@@ -46,6 +47,15 @@ function getEmptyToy(name = 'Placeholder', price = 50, img = '', labels = []) {
 
 function getDefaultFilter() {
     return { name: '', inStock: true, labels: [] }
+}
+
+function getPercentOfStock(toys) {
+    // console.log(toys);
+    let lableData = [[0, 0, 0, 0, 0, 0, 0, 0]]
+    toys.map(toy => {
+        console.log(toy.labels)
+    })
+
 }
 
 function _createDemoData() {

@@ -10,6 +10,7 @@ import { LoadingSpinner } from "./loading-spinner.jsx";
 export function ToyEdit() {
     const { toyId } = useParams()
     const [toy, setToy] = useState(toyService.getEmptyToy())
+    const [checked, setChecked] = useState(toy.inStock === 'on' ? true : false)
     const navigate = useNavigate()
     let toyLabels = toyService.labels
     const options = toyLabels.map(label => ({ value: label, label }))
@@ -30,12 +31,15 @@ export function ToyEdit() {
     }
 
     function handleChange({ target }, value) {
+        setChecked(!checked)
         if (target) {
             let { value, type, name: field } = target
             value = (type === 'number') ? +value : value
 
             if (type === 'checkbox') {
-                setToy(prevToy => ({ ...prevToy, inStock: target.checked }))
+                console.log(checked);
+                toy.inStock = checked ? 'on' : false
+                setToy(prevToy => ({ ...prevToy, inStock: false }))
             }
 
             setToy(prevToy => ({ ...prevToy, [field]: value }))
@@ -47,10 +51,11 @@ export function ToyEdit() {
                 setToy(prevToy => ({ ...prevToy, labels: [...prevToy.labels, value.option.label] }))
             }
         }
+        console.log('settoy', toy);
 
         // newBug(bugToEdit)
     }
-
+    // console.log(toy.inStock);
     function onSaveToy(ev) {
         ev.preventDefault()
         saveToys(toy)
@@ -59,7 +64,6 @@ export function ToyEdit() {
                 navigate('/toy')
             })
     }
-
     if (!toy) return <LoadingSpinner />
     return (
         <form className="edit-container" onSubmit={onSaveToy}>
@@ -99,7 +103,8 @@ export function ToyEdit() {
                 <label htmlFor="checkbox">
                     <input type="checkbox"
                         name="inStock"
-                        // value={toy.inStock}
+                        value={!checked ? 'on' : !!false}
+                        checked={toy.inStock === 'on' ? 'on' : !!false}
                         onChange={handleChange}
                         id="checkbox" />
                     Do you have stock of the toy?

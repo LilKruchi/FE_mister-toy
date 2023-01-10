@@ -6,6 +6,8 @@ export function ToyList({ toys, onRemoveToy, onEditToy }) {
     return (
         <>
             {toys.map(toy => {
+                // console.log(toy.inStock);
+
                 let isInStockClass = toy.inStock ? '' : 'not-in-stock'
                 return (
 
