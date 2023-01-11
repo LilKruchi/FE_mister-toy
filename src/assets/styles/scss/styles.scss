@@ -1,0 +1,24 @@
+// SETUP
+@import 'setup/typography';
+// @import 'setup/functions';
+@import 'setup/variables';
+@import 'setup/mixins';
+
+// BASICS
+@import 'basics/helpers';
+@import 'basics/base';
+@import 'basics/layout';
+
+// COMPONENTS
+@import 'cmps/about';
+@import 'cmps/app-header';
+@import 'cmps/toy-details';
+@import 'cmps/toy-edit';
+@import 'cmps/toy-filter';
+@import 'cmps/toy-filter';
+@import 'cmps/toy-list';
+@import 'cmps/toy-preview';
+@import 'cmps/loading';
+@import 'cmps/google-map';
+
+//VIEWS

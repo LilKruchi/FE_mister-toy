@@ -1,0 +1,68 @@
+.index-cmps-container {
+    display: flex;
+}
+
+.filter-container {
+    padding-top: 15px;
+    min-width: 300px;
+}
+
+
+.toys-display {
+    flex-basis: 100%;
+    display: grid;
+    min-height: 80vh;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
+    .toy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        background-color: $clr6;
+        margin: 15px auto;
+        width: 30%;
+        border: 1px solid $clr7;
+        min-width: 90%;
+        height: 400px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1) .3s, transform cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+
+        &:hover {
+            text-decoration: none;
+            background-color: $clr3-light;
+            transform: scale(1.05);
+        }
+
+
+        &.not-in-stock {
+            background-color: $clr2-transparent;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin: 0.5em;
+            gap: 15px;
+
+            button {
+                background-color: $clr4;
+
+                &:hover {
+                    background-color: $clr4-dark;
+                }
+
+                &:active {
+                    background-color: $clr4-click;
+                }
+            }
+        }
+    }
+
+    div.button-container.not-in-stock {
+        background-color: transparent;
+    }
+
+}

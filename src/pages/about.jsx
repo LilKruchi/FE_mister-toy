@@ -7,9 +7,11 @@ export function About() {
     const changeLocation = (lat, lng, zoom = 14) => {
         setCoords(prevCoords => ({ ...prevCoords, center: { ...prevCoords.center, lat, lng }, zoom }))
     }
+
     const handleClick = ({ lat, lng }) => {
         setCoords({ center: { lat, lng } })
     }
+
     return (
         <section className="about">
             <aside>

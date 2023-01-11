@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: rubik;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: .5em 0 .5em;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+
+    &:hover {
+        text-decoration: underline;
+        color: $clr2
+    }
+
+    &.active {
+        text-decoration: overline;
+    }
+}
+
+/* Dont stretch my Media */
+img,
+embed,
+video,
+object {
+    max-width: 100%
+}
+
+/* Simple and useful CSS Debugging Technique */
+.debug * {
+    outline: 1px solid gold
+}
+
+
+button {
+    @include btn;
+    padding: 0 2.5em;
+
+    &:hover {
+        @include btn-hover;
+    }
+}
+
+a.link-btn {
+    @include btn;
+
+    &:hover {
+        @include btn-hover;
+    }
+
+    &:active {
+        @include btn-press;
+    }
+
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}

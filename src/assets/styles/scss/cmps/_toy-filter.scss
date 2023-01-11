@@ -1,0 +1,71 @@
+.toy-filter {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    .filter-container {
+        border-right: 1px solid $clr7;
+
+        .add-container {
+            margin-top: 1px;
+            padding: 9px;
+            margin-left: -1.6rem;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $clr7;
+        }
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display: inline-block;
+        }
+
+        input#name,
+        input#price {
+            @include inpt;
+        }
+    }
+
+    .multi-select {
+        font-family: rubik;
+        margin: 5px 15px 0 0;
+        margin-top: 15px;
+    }
+
+    #stock {
+        margin-left: 0;
+    }
+
+    .filter-title {
+        margin-top: 60px;
+    }
+}
+
+input::placeholder {
+    font-family: rubik;
+}
+
+
+.index-cmps-container .filter-container .add-container {
+    margin-top: 1px;
+    padding: 9px;
+    margin-left: -1.6rem;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $clr7;
+
+
+    .add-toy {
+        position: block;
+        margin-top: 10px;
+        margin-left: 1.06rem;
+
+        div {
+            display: inline-block;
+            position: relative;
+            right: 23%;
+        }
+    }
+}

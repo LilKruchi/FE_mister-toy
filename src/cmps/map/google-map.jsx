@@ -2,13 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import GoogleMapReact from 'google-map-react';
-// const style = {
-//     { color: 'white', background: 'blue', padding: '10px 10px', borderRadius: '50%', textAlign: 'center', display: 'inline-flex' }
-// }
-const Ashdod = ({ text }) => <div
-    style={
-        { color: 'white', background: 'blue', padding: '10px 10px', borderRadius: '50%', textAlign: 'center', display: 'inline-flex' }
-    }>{text}</div>
+const style = { color: 'white', background: 'blue', padding: '10px 10px', borderRadius: '50%', textAlign: 'center', display: 'inline-flex' }
+const Ashdod = ({ text }) => <div style={{ ...style }}>{text}</div>
 const BeershevaLoc = ({ text }) => <div
     style={
         { color: 'white', background: 'blue', padding: '10px 10px', borderRadius: '50%', textAlign: 'center', display: 'inline-flex' }

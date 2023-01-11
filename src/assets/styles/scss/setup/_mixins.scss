@@ -1,0 +1,24 @@
+@mixin btn {
+    cursor: pointer;
+    background-color: $clr4;
+    border: 0;
+    padding: 0.5em 2em;
+    border-radius: 4px;
+    transition: background-color .2s;
+}
+
+@mixin btn-hover {
+    background-color: $clr4-dark;
+}
+
+@mixin btn-press {
+    background-color: $clr4-click;
+}
+
+@mixin inpt {
+    height: 40px;
+    border: 1px solid $clr8;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin: 20px 5px;
+}
