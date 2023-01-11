@@ -2,12 +2,10 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ToyLabelCount } from "../cmps/statistics/toy-label-count.jsx";
 import { ToyPriceChart } from "../cmps/statistics/toy-price-chart.jsx";
-import { toyService } from "../services/toy.service.js";
 import { loadToys } from "../store/actions/toy.action.js";
 export function Statistics() {
     const toys = useSelector(storeState => storeState.toyModule.toys)
 
-    let labels = toyService.labels
     useEffect(() => {
         loadToys()
     }, [])
