@@ -1,6 +1,7 @@
 import { storageService } from "./async-storage.service.js"
 import { utilService } from "./util.service.js"
 import { httpService } from "./http.service.js"
+import axios from "axios"
 
 const TOY_KEY = 'toyDB'
 const BASE_URL = 'toy/'
@@ -15,7 +16,7 @@ export const toyService = {
     save,
     getEmptyToy,
     getDefaultFilter,
-    getPercentOfStock
+    savePhoto
 }
 // { name: '', inStock: true, labels: [] }
 function query(filterBy = getDefaultFilter()) {
@@ -49,13 +50,9 @@ function getDefaultFilter() {
     return { name: '', inStock: true, labels: [] }
 }
 
-function getPercentOfStock(toys) {
-    // console.log(toys);
-    let lableData = [[0, 0, 0, 0, 0, 0, 0, 0]]
-    toys.map(toy => {
-        console.log(toy.labels)
-    })
-
+function savePhoto(img) {
+    // console.log(img.type)
+    // return axios.post('/api/toy/edit/upload')
 }
 
 function _createDemoData() {

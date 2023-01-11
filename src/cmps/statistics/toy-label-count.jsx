@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export function ToyPriceChart({ dataMap }) {
+export function ToyLabelCount({ dataMap }) {
 
     const data = {
         labels: Object.keys(dataMap),
         datasets: [
             {
-                label: 'sum of price category',
+                label: 'Count of label',
                 data: Object.values(dataMap),
                 backgroundColor: [
                     'rgb(255, 99, 132)',

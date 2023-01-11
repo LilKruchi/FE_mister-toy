@@ -42,6 +42,10 @@ export function ToyEdit() {
                 setToy(prevToy => ({ ...prevToy, inStock: false }))
             }
 
+            if (type === 'file') {
+                console.log('value');
+            }
+
             setToy(prevToy => ({ ...prevToy, [field]: value }))
         } else {
             console.log(value);
@@ -51,7 +55,6 @@ export function ToyEdit() {
                 setToy(prevToy => ({ ...prevToy, labels: [...prevToy.labels, value.option.label] }))
             }
         }
-        console.log('settoy', toy);
 
         // newBug(bugToEdit)
     }
@@ -97,6 +100,8 @@ export function ToyEdit() {
                 <label htmlFor="img">Toy img:
                     <input type="file"
                         name="img"
+                        accept=".png, .jpg"
+                        onChange={handleChange}
                         id="img" />
                 </label>
 

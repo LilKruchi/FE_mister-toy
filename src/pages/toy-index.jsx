@@ -66,6 +66,7 @@ export function ToyIndex() {
             <section className="toys-display">
                 <ToyList toys={toys} onRemoveToy={onRemoveToy} onEditToy={onEditToy} />
             </section>
+
         </section >
     )
 }

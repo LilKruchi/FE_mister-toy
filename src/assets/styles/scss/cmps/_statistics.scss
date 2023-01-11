@@ -1,0 +1,27 @@
+.chart-container {
+
+    position: relative;
+    display: flex;
+    height: 55vh;
+    margin-top: 1%;
+
+    .chart {
+        margin-top: 80px;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        border: 1px solid $clr7;
+        padding: 5% 0;
+        width: 50%;
+
+        &:first-child {
+            border-right: none;
+        }
+
+        h2 {
+            margin: 15px 0;
+        }
+    }
+}
