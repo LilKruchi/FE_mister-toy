@@ -7,7 +7,7 @@ export function ToyPreview({ toy, isInStockClass }) {
             </div>
 
             <p className={isInStockClass}>{isInStockClass ? 'Not in stock' : toy.name}</p>
-            <p className={isInStockClass}>{isInStockClass ? '' : `Price: ${toy.price}`}</p>
+            <p className={isInStockClass}> Price: ${toy.price} </p>
         </div>
     )
 }

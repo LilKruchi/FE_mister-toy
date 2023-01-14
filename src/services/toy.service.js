@@ -20,7 +20,7 @@ export const toyService = {
 }
 // { name: '', inStock: true, labels: [] }
 function query(filterBy = getDefaultFilter()) {
-    const queryParams = `?name=${filterBy.name}&inStock=${filterBy.inStock}&labels=${filterBy.labels.join(',')}`
+    const queryParams = `?name=${filterBy.name}&price=${filterBy.price}&inStock=${filterBy.inStock}&labels=${filterBy.labels.join(',')}`
     return httpService.get(BASE_URL + queryParams)
 }
 
@@ -40,9 +40,9 @@ function save(toy) {
     }
 }
 
-function getEmptyToy(name = 'Placeholder', price = 50, img = '', labels = []) {
+function getEmptyToy(name = 'Placeholder', price = 50, img = {}, labels = []) {
     return {
-        _id: '', name, price, img, labels, createdAt: 0, inStock: false
+        name, price, img, labels, createdAt: 0, inStock: false
     }
 }
 

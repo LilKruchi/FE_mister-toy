@@ -25,11 +25,6 @@ a {
     text-decoration: none;
     color: unset;
 
-    &:hover {
-        text-decoration: underline;
-        color: $clr2
-    }
-
     &.active {
         text-decoration: overline;
     }

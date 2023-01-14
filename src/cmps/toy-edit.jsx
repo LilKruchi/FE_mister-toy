@@ -33,17 +33,22 @@ export function ToyEdit() {
     function handleChange({ target }, value) {
         setChecked(!checked)
         if (target) {
-            let { value, type, name: field } = target
+            let { value, file, type, name: field } = target
             value = (type === 'number') ? +value : value
 
             if (type === 'checkbox') {
                 console.log(checked);
                 toy.inStock = checked ? 'on' : false
                 setToy(prevToy => ({ ...prevToy, inStock: false }))
+                return
             }
 
             if (type === 'file') {
-                console.log('value');
+                // console.log(target.files[0]);
+                const files = Array.from(target.files)
+                console.log(files);
+                setToy(prevToy => ({ ...prevToy, img: files[0] }))
+                return
             }
 
             setToy(prevToy => ({ ...prevToy, [field]: value }))
@@ -58,7 +63,7 @@ export function ToyEdit() {
 
         // newBug(bugToEdit)
     }
-    // console.log(toy.inStock);
+    console.log(toy);
     function onSaveToy(ev) {
         ev.preventDefault()
         saveToys(toy)

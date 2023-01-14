@@ -12,6 +12,7 @@ import { About } from './pages/about'
 import { Statistics } from './pages/statistics'
 
 import './assets/styles/scss/styles.scss'
+import { LoginSignup } from './pages/login-signup.jsx'
 
 export function App() {
 
@@ -27,6 +28,7 @@ export function App() {
                         <Route path="/toy/edit/:toyId" element={<ToyEdit />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/statistic" element={<Statistics />} />
+                        <Route path="/signLog" element={<LoginSignup />} />
                     </Routes>
                 </section>
             </Router>

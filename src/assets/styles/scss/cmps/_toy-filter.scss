@@ -1,10 +1,11 @@
-.toy-filter {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+.filter-container {
+    border-right: 1px solid $clr7;
 
-    .filter-container {
-        border-right: 1px solid $clr7;
+    .toy-filter {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        position: fixed;
 
         .add-container {
             margin-top: 1px;
